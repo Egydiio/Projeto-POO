@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "KTII4UAjXMXizIbK7kwMmoOWha0UCDdd/C3Vk59BaHIrAIGR7ot1YpLILq1fWE5e1patS1E++Ylvj5Idrg8nKQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj",
+=======
+  "dgSpecHash": "kLmZCHzPZzaWxsTAnFm/fqt2PjD3PzcuKGv+NslT7DOwhUnPm6aM/24pmMmFVMRRc9iw2W6vjiD1vWyA0YDDSg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\joaof\\OneDrive\\Área de Trabalho\\ProjetoPOO\\Projeto-POO\\Projeto-POO.csproj",
+>>>>>>> 8b7f54cfe9110ccb53bd791beaa3c7a69c6552a2
   "expectedPackageFiles": [],
   "logs": []
 }
