@@ -1,37 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj": {}
+    "C:\\Users\\MARCE\\Desktop\\TrabalhoPOO\\Projeto-POO\\Projeto-POO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj": {
+    "C:\\Users\\MARCE\\Desktop\\TrabalhoPOO\\Projeto-POO\\Projeto-POO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj",
+        "projectUniqueName": "C:\\Users\\MARCE\\Desktop\\TrabalhoPOO\\Projeto-POO\\Projeto-POO.csproj",
         "projectName": "Projeto-POO",
-        "projectPath": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj",
-        "packagesPath": "C:\\Users\\Egydiio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\obj\\",
+        "projectPath": "C:\\Users\\MARCE\\Desktop\\TrabalhoPOO\\Projeto-POO\\Projeto-POO.csproj",
+        "packagesPath": "C:\\Users\\MARCE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MARCE\\Desktop\\TrabalhoPOO\\Projeto-POO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Egydiio\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-    "C:\\Users\\joaof\\OneDrive\\Área de Trabalho\\ProjetoPOO\\Projeto-POO\\Projeto-POO.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\joaof\\OneDrive\\Área de Trabalho\\ProjetoPOO\\Projeto-POO\\Projeto-POO.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\joaof\\OneDrive\\Área de Trabalho\\ProjetoPOO\\Projeto-POO\\Projeto-POO.csproj",
-        "projectName": "Projeto-POO",
-        "projectPath": "C:\\Users\\joaof\\OneDrive\\Área de Trabalho\\ProjetoPOO\\Projeto-POO\\Projeto-POO.csproj",
-        "packagesPath": "C:\\Users\\joaof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaof\\OneDrive\\Área de Trabalho\\ProjetoPOO\\Projeto-POO\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\joaof\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 8b7f54cfe9110ccb53bd791beaa3c7a69c6552a2
+          "C:\\Users\\MARCE\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -70,11 +53,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
->>>>>>> 8b7f54cfe9110ccb53bd791beaa3c7a69c6552a2
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

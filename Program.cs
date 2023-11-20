@@ -1,6 +1,10 @@
 ﻿using System;
 using System.IO;
 
+interface Conta{
+    void CalcularConta();
+}
+
 public enum TipoConsumidor
 {
     Residencial,
@@ -19,7 +23,7 @@ public class Consumidor
     public TipoConsumidor Tipo { get; set; }
 }
 
-public class ContaEnergia
+public class ContaEnergia : Conta
 {
     public Consumidor? Consumidor { get; set; }
     public double LeituraMesAnterior { get; set; }
@@ -61,7 +65,7 @@ public class ContaEnergia
     }
 }
 
-public class ContaAgua
+public class ContaAgua : Conta
 {
     public Consumidor? Consumidor { get; set; }
     public double LeituraMesAnterior { get; set; }
