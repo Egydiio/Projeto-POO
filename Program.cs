@@ -76,48 +76,111 @@ public class ContaAgua : Conta
     public double TarifaEsgoto { get; set; }
     public double Cofins { get; set; }
     public double ValorTotal { get; set; }
+    public double count { get; set; }
+    public double TarifaAguaTemp { get; set; }
+    public double TarifaEsgotoTemp { get; set; }
+
 
     public void CalcularConta()
     {
         ConsumoAgua = LeituraMesAtual - LeituraMesAnterior;
+        count = 0;
 
         // Lógica de cálculo da tarifa escalonada para água
         if (Consumidor?.Tipo == TipoConsumidor.Residencial)
         {
-            if (ConsumoAgua <= 6)
+            if (ConsumoAgua >= 6)
             {
-                TarifaAgua = 10.08; // Exemplo de tarifa para a faixa 0-6 m³
-                TarifaEsgoto = 5.05; // Exemplo de tarifa para a faixa 0-6 m³ de esgoto
+                if(ConsumoAgua >= 10){
+                    TarifaAgua = 2.241; // Exemplo de tarifa para a faixa 6-10 m³
+                    TarifaEsgoto = 1.122; // Exemplo de tarifa para a faixa 6-10 m³ de esgoto
+                    count += 10;
+                    TarifaAguaTemp += 10 * TarifaAgua;
+                    TarifaEsgotoTemp += 10 * TarifaEsgoto;
+                    Console.WriteLine("1-IF-TarifaAgua: " + TarifaAguaTemp);
+                    Console.WriteLine("1-IF-TarifaEsgoto: " + TarifaEsgotoTemp);
+                } else {
+                    TarifaAgua = 2.241; // Exemplo de tarifa para a faixa 6-10 m³
+                    TarifaEsgoto = 1.122; // Exemplo de tarifa para a faixa 6-10 m³ de esgoto
+                    TarifaAguaTemp += ConsumoAgua * TarifaAgua;
+                    TarifaEsgotoTemp += ConsumoAgua * TarifaEsgoto;
+                    count = ConsumoAgua;
+                    Console.WriteLine("1-ELSE-TarifaAgua: " + TarifaAguaTemp);
+                    Console.WriteLine("1-ELSE-TarifaEsgoto: " + TarifaEsgotoTemp);
+                }
+                if((ConsumoAgua - count) > 0){
+                    if((ConsumoAgua - count) >= 10){
+                        TarifaAgua = 5.447; // Exemplo de tarifa para a faixa 10-15 m³
+                        TarifaEsgoto = 2.724; // Exemplo de tarifa para a faixa 10-15 m³ de esgoto
+                        count += 5;
+                        TarifaAguaTemp += 5 * TarifaAgua;
+                        TarifaEsgotoTemp += 5 * TarifaEsgoto;
+                        Console.WriteLine("2-IF-TarifaAgua: " + TarifaAguaTemp);
+                        Console.WriteLine("2-IF-TarifaEsgoto: " + TarifaEsgotoTemp);
+                    } else {
+                        TarifaAgua = 5.447; // Exemplo de tarifa para a faixa 10-15 m³
+                        TarifaEsgoto = 2.724; // Exemplo de tarifa para a faixa 10-15 m³ de esgoto
+                        TarifaAguaTemp += (ConsumoAgua - count) * TarifaAgua;
+                        TarifaEsgotoTemp += (ConsumoAgua - count) * TarifaEsgoto;
+                        count = ConsumoAgua;
+                        Console.WriteLine("2-ELSE-TarifaAgua: " + TarifaAguaTemp);
+                        Console.WriteLine("2-ELSE-TarifaEsgoto: " + TarifaEsgotoTemp);
+                    }
+                }
+                if((ConsumoAgua - count) > 0){
+                    if((ConsumoAgua - count) >= 15){
+                        TarifaAgua = 5.461; // Exemplo de tarifa para a faixa 15-20 m³
+                        TarifaEsgoto = 2.731; // Exemplo de tarifa para a faixa 15-20 m³ de esgoto
+                        count += 5;
+                        TarifaAguaTemp += 5 * TarifaAgua;
+                        TarifaEsgotoTemp += 5 * TarifaEsgoto;
+                        Console.WriteLine("3-IF-TarifaAgua: " + TarifaAguaTemp);
+                        Console.WriteLine("3-IF-TarifaEsgoto: " + TarifaEsgotoTemp);
+
+                    } else {
+                        TarifaAgua = 5.461; // Exemplo de tarifa para a faixa 15-20 m³
+                        TarifaEsgoto = 2.731; // Exemplo de tarifa para a faixa 15-20 m³ de esgoto
+                        TarifaAguaTemp += (ConsumoAgua - count) * TarifaAgua;
+                        TarifaEsgotoTemp += (ConsumoAgua - count) * TarifaEsgoto;
+                        count = ConsumoAgua;
+                        Console.WriteLine("3-ELSE-TarifaAgua: " + TarifaAguaTemp);
+                        Console.WriteLine("3-ELSE-TarifaEsgoto: " + TarifaEsgotoTemp);
+                    }
+                }
+                if((ConsumoAgua - count) > 0){
+                    if((ConsumoAgua - count) >= 20){
+                        TarifaAgua = 5.487; // Exemplo de tarifa para a faixa 20-40 m³
+                        TarifaEsgoto = 2.744; // Exemplo de tarifa para a faixa 20-40 m³ de esgoto
+                        count += 20;
+                        TarifaAguaTemp += 20 * TarifaAgua;
+                        TarifaEsgotoTemp += 20 * TarifaEsgoto;
+                        Console.WriteLine("4-IF-TarifaAgua: " + TarifaAguaTemp);
+                        Console.WriteLine("4-IF-TarifaEsgoto: " + TarifaEsgotoTemp);
+                    } else {
+                        TarifaAgua = 5.487; // Exemplo de tarifa para a faixa 20-40 m³
+                        TarifaEsgoto = 2.744; // Exemplo de tarifa para a faixa 20-40 m³ de esgoto
+                        TarifaAguaTemp += (ConsumoAgua - count) * TarifaAgua;
+                        TarifaEsgotoTemp += (ConsumoAgua - count) * TarifaEsgoto;
+                        count = ConsumoAgua;
+                        Console.WriteLine("4-ELSE-TarifaAgua: " + TarifaAguaTemp);
+                        Console.WriteLine("4-ELSE-TarifaEsgoto: " + TarifaEsgotoTemp);
+                    }
+                } 
+                if((ConsumoAgua - count) > 0){
+                    TarifaAgua = 10.066; // Exemplo de tarifa para a faixa +40 m³
+                    TarifaEsgoto = 5.035; // Exemplo de tarifa para a faixa +40 m³ de esgoto
+                    TarifaAguaTemp += (ConsumoAgua - count) * TarifaAgua;
+                    TarifaEsgotoTemp += (ConsumoAgua - count) * TarifaEsgoto;
+                    Console.WriteLine("5-IF-TarifaAgua: " + TarifaAguaTemp);
+                    Console.WriteLine("5-IF-TarifaEsgoto: " + TarifaEsgotoTemp);
+                }
                 ConsumoEsgoto = ConsumoAgua;
             }
-            else if (ConsumoAgua > 6 && ConsumoAgua <= 10)
-            {
-                TarifaAgua = 2.241; // Exemplo de tarifa para a faixa 6-10 m³
-                TarifaEsgoto = 1.122; // Exemplo de tarifa para a faixa 6-10 m³ de esgoto
-                ConsumoEsgoto = ConsumoAgua;
-            }
-            else if (ConsumoAgua > 10 && ConsumoAgua <= 15)
-            {
-                TarifaAgua = 5.447; // Exemplo de tarifa para a faixa 10-15 m³
-                TarifaEsgoto = 2.724; // Exemplo de tarifa para a faixa 10-15 m³ de esgoto
-                ConsumoEsgoto = ConsumoAgua;
-            } 
-            else if (ConsumoAgua > 15 && ConsumoAgua <= 20)
-            {
-                TarifaAgua = 5.461; // Exemplo de tarifa para a faixa 15-20 m³
-                TarifaEsgoto = 2.731; // Exemplo de tarifa para a faixa 15-20 m³ de esgoto
-                ConsumoEsgoto = ConsumoAgua;
-            } 
-            else if (ConsumoAgua > 20 && ConsumoAgua <= 40)
-            {
-                TarifaAgua = 5.487; // Exemplo de tarifa para a faixa 20-40 m³
-                TarifaEsgoto = 2.744; // Exemplo de tarifa para a faixa 20-40 m³ de esgoto
-                ConsumoEsgoto = ConsumoAgua;
-            } else if (ConsumoAgua > 40)
-            {
-                TarifaAgua = 10.066; // Exemplo de tarifa para a faixa +40 m³
-                TarifaEsgoto = 5.035; // Exemplo de tarifa para a faixa +40 m³ de esgoto
-                ConsumoEsgoto = ConsumoAgua;
+            else {
+                TarifaAgua = 10.08; // Tarifa fixa para a faixa 0-6 m³
+                TarifaEsgoto = 5.05; // Tarifa fixa para a faixa 0-6 m³ de esgoto
+                ConsumoAgua = 1;
+				ConsumoEsgoto = ConsumoAgua;
             }
         }
         else if (Consumidor?.Tipo == TipoConsumidor.Comercial)
@@ -155,7 +218,7 @@ public class ContaAgua : Conta
         }
 
         // Cálculo do valor total
-        ValorTotal = (ConsumoAgua * TarifaAgua) + (ConsumoEsgoto * TarifaEsgoto);
+        ValorTotal =  TarifaAguaTemp + TarifaEsgotoTemp;
 
         // Adição de 3% a título de COFINS
         Cofins = ValorTotal * 0.03;
