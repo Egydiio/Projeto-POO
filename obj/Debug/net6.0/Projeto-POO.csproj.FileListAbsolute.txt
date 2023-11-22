@@ -1,0 +1,45 @@
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\bin\Debug\net6.0\Projeto-POO.exe
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\bin\Debug\net6.0\Projeto-POO.deps.json
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\bin\Debug\net6.0\Projeto-POO.runtimeconfig.json
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\bin\Debug\net6.0\Projeto-POO.dll
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\bin\Debug\net6.0\Projeto-POO.pdb
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.csproj.AssemblyReference.cache
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.AssemblyInfoInputs.cache
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.AssemblyInfo.cs
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.csproj.CoreCompileInputs.cache
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.dll
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\refint\Projeto-POO.dll
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.pdb
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\Projeto-POO.genruntimeconfig.cache
+C:\Users\Egydiio\Documents\POO\Trabalho Final\Projeto-POO\obj\Debug\net6.0\ref\Projeto-POO.dll
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\bin\Debug\net6.0\Projeto-POO.exe
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\bin\Debug\net6.0\Projeto-POO.deps.json
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\bin\Debug\net6.0\Projeto-POO.runtimeconfig.json
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\bin\Debug\net6.0\Projeto-POO.dll
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\bin\Debug\net6.0\Projeto-POO.pdb
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.csproj.AssemblyReference.cache
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.AssemblyInfoInputs.cache
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.AssemblyInfo.cs
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.csproj.CoreCompileInputs.cache
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.dll
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\refint\Projeto-POO.dll
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.pdb
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\Projeto-POO.genruntimeconfig.cache
+C:\Users\MARCE\Desktop\TrabalhoPOO\Projeto-POO\obj\Debug\net6.0\ref\Projeto-POO.dll
+C:\Users\camil\Projeto-POO\bin\Debug\net6.0\Projeto-POO.exe
+C:\Users\camil\Projeto-POO\bin\Debug\net6.0\Projeto-POO.deps.json
+C:\Users\camil\Projeto-POO\bin\Debug\net6.0\Projeto-POO.runtimeconfig.json
+C:\Users\camil\Projeto-POO\bin\Debug\net6.0\Projeto-POO.dll
+C:\Users\camil\Projeto-POO\bin\Debug\net6.0\Projeto-POO.pdb
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.AssemblyInfoInputs.cache
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.AssemblyInfo.cs
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.csproj.CoreCompileInputs.cache
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.sourcelink.json
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.dll
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\refint\Projeto-POO.dll
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.pdb
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\Projeto-POO.genruntimeconfig.cache
+C:\Users\camil\Projeto-POO\obj\Debug\net6.0\ref\Projeto-POO.dll
