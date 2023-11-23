@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\camil\\Projeto-POO\\Projeto-POO.csproj",
+      "projectUniqueName": "C:\\Users\\camil\\OneDrive\\Área de Trabalho\\POO\\Projeto-POO\\Projeto-POO.csproj",
       "projectName": "Projeto-POO",
-      "projectPath": "C:\\Users\\camil\\Projeto-POO\\Projeto-POO.csproj",
+      "projectPath": "C:\\Users\\camil\\OneDrive\\Área de Trabalho\\POO\\Projeto-POO\\Projeto-POO.csproj",
       "packagesPath": "C:\\Users\\camil\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\camil\\Projeto-POO\\obj\\",
+      "outputPath": "C:\\Users\\camil\\OneDrive\\Área de Trabalho\\POO\\Projeto-POO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\camil\\AppData\\Roaming\\NuGet\\NuGet.Config"

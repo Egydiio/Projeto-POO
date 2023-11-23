@@ -1,2 +1,108 @@
 1;Residencial;100;150;Agua;50;80;Energia
-2;Comercial;200;250;Agua;75;120;Energia
+2;Comercial;200;250;Agua;75;175;Energia
+3;Residencial;50;87;Agua;100;200;Energia
+
+{
+    id: 
+    nome:
+    contas[
+        2018[
+            Jan[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ], 
+            Fev[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ]
+            Mar[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Abr[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            May[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Jun[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Jul[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Aug[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Sep[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Oct[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Nov[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+            Dez[
+                Agua{
+
+                }, 
+                Energia{
+
+                }
+            ],
+        ],
+    ]
+}
