@@ -104,7 +104,7 @@ public class ContaAgua : Conta
                     count = ConsumoAgua;
                 }
                 if((ConsumoAgua - count) > 0){
-                    if((ConsumoAgua - count) >= 10){
+                    if((ConsumoAgua - count) >= 5){
                         TarifaAgua = 5.447; // Exemplo de tarifa para a faixa 10-15 m³
                         TarifaEsgoto = 2.724; // Exemplo de tarifa para a faixa 10-15 m³ de esgoto
                         count += 5;
@@ -119,7 +119,7 @@ public class ContaAgua : Conta
                     }
                 }
                 if((ConsumoAgua - count) > 0){
-                    if((ConsumoAgua - count) >= 15){
+                    if((ConsumoAgua - count) >= 5){
                         TarifaAgua = 5.461; // Exemplo de tarifa para a faixa 15-20 m³
                         TarifaEsgoto = 2.731; // Exemplo de tarifa para a faixa 15-20 m³ de esgoto
                         count += 5;
@@ -158,7 +158,6 @@ public class ContaAgua : Conta
             else {
                 TarifaAgua = 10.08; // Tarifa fixa para a faixa 0-6 m³
                 TarifaEsgoto = 5.05; // Tarifa fixa para a faixa 0-6 m³ de esgoto
-                ConsumoAgua = 1;
             }
         }
         else if (Consumidor?.Tipo == TipoConsumidor.Comercial)
@@ -217,7 +216,6 @@ public class ContaAgua : Conta
             } else {
                 TarifaAgua = 25.79; // Tarifa fixa para a faixa 0-6 m³ para Comercial
                 TarifaEsgoto = 12.90; // Tarifa fixa para a faixa 0-6 m³ de esgoto para Comercial
-                ConsumoAgua = 1;
             }
         }
 
