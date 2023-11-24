@@ -1,2 +1,4 @@
 # Ignorar arquivos Debugs
-/obj/
+bin/
+obj/
+*.cache
