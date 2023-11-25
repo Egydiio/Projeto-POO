@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xgeyK3ERVZhaWTvNRrGkGhCwhJ0LkHvsG6zlRuacEFQQBaL2hyYH0C3WgCCnNOofsWZEmQrjkPr2YlBcEepbzg==",
+  "dgSpecHash": "KTII4UAjXMXizIbK7kwMmoOWha0UCDdd/C3Vk59BaHIrAIGR7ot1YpLILq1fWE5e1patS1E++Ylvj5Idrg8nKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\camil\\OneDrive\\Área de Trabalho\\POO\\Projeto-POO\\Projeto-POO.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\camil\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\camil\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\camil\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\camil\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
