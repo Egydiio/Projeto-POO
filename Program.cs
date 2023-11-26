@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Common;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks.Dataflow;
@@ -381,7 +382,8 @@ public class ContaAgua : Conta
 
 class Program
 {
-
+    public static int id = 0;
+    public static StreamWriter sw = File.AppendText("Consumidores.txt");
     static bool ProcessarContas(string caminhoArquivo = "Contas/ContaPrincipal/Arquivo.txt")
     {
         try
@@ -483,67 +485,79 @@ class Program
             tables.ConsultTable();
         } 
     }
+
+    public static void escreveConsumidores(string nome){
+        sw.WriteLine(id + "," + nome); 
+        id++;
+    }
     static void Main()
     {
-        
+        bool run = true;
         Tables tables = new Tables();
-        tables.DashboardTable();
-        string opcao = Console.ReadLine();
 
-        switch (opcao)
-        {
+        while(run){
+            Console.Clear();
+            tables.DashboardTable();
+            string opcao = Console.ReadLine();
+            switch (opcao){
             case "1":
-                    tables.RegisterTable();
-                    Console.Write("Escreva seu nome: ");
-                    string nome = Console.ReadLine();
-                    break;
+                Console.Clear();
+                tables.RegisterTable();
+                Console.Write("Escreva seu nome: ");
+                string nome = Console.ReadLine();
+                escreveConsumidores(nome);
+                break;
             case "2":
-                    tables.LoginTable();
-                    Console.Write("Escreva seu ID: ");
-                    string ID = Console.ReadLine();
-                    break;
+                Console.Clear();
+                tables.LoginTable();
+                Console.Write("Escreva seu ID: ");
+                string ID = Console.ReadLine();
+                break;
             case "0":
-                    break;
+                Console.Clear();
+                Console.WriteLine("Obrigado por usar nossa aplicação !!!");
+                run = false;
+                sw.Close();
+                break;
             default:
                 Console.WriteLine("Opção inválida.");
-                    break;
+                break;
         }
-        
+        }
 
+        // int login;
 
-        int login;
+        // // Exibir a tabela de login
+        // tables.Quest();
+        // login = int.Parse(Console.ReadLine());
 
-        // Exibir a tabela de login
-        tables.Quest();
-        login = int.Parse(Console.ReadLine());
+        // // Verificar se a pessoa quer adicionar um arquivo
+        // tables.FileTable();
+        // tables.Quest();
+        // int opcaoAdicionarArquivo = int.Parse(Console.ReadLine());
 
-        // Verificar se a pessoa quer adicionar um arquivo
-        tables.FileTable();
-        tables.Quest();
-        int opcaoAdicionarArquivo = int.Parse(Console.ReadLine());
-
-        if (opcaoAdicionarArquivo == 1)
-        {
-            // Exibir a tabela de adicionar arquivo
-            string nomeArq;
-            string caminhoCompleto;
-            do
-            {
-                Console.WriteLine();
-                tables.AddFileTable();
-                nomeArq = Console.ReadLine();
-                caminhoCompleto = Path.Combine("Contas", nomeArq);
-            } while (ProcessarContas(caminhoCompleto) == false);
+        // if (opcaoAdicionarArquivo == 1)
+        // {
+        //     // Exibir a tabela de adicionar arquivo
+        //     string nomeArq;
+        //     string caminhoCompleto;
+        //     do
+        //     {
+        //         Console.WriteLine();
+        //         tables.AddFileTable();
+        //         nomeArq = Console.ReadLine();
+        //         caminhoCompleto = Path.Combine("Contas", nomeArq);
+        //     } while (ProcessarContas(caminhoCompleto) == false);
             
-            Console.WriteLine(caminhoCompleto);
-            if (ProcessarContas(caminhoCompleto))
-            {
-                tables.ConsultTable();
-            }
-        }
-        else
-        {
-            tables.ConsultTable();
-        }
+        //     Console.WriteLine(caminhoCompleto);
+        //     if (ProcessarContas(caminhoCompleto))
+        //     {
+        //         tables.ConsultTable();
+        //     }
+        // }
+        // else
+        // {
+        //     tables.ConsultTable();
+        // }
     }
 }

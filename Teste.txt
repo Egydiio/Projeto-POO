@@ -1,0 +1,101 @@
+{
+    id: 
+    nome:
+    contas:
+        Jan[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ], 
+        Fev[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ]
+        Mar[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Abr[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        May[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Jun[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Jul[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Aug[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Sep[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Oct[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Nov[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+        Dez[
+            Agua{
+
+            }, 
+            Energia{
+
+            }
+        ],
+}
