@@ -7,7 +7,7 @@ using System.Threading.Tasks.Dataflow;
 
 class Program
 {
-    public static int id = 0;
+    public static int UsuarioLogado;
     public static StreamWriter sw = File.AppendText("Tabelas/Consumidores.txt");
     static bool ProcessarContas(string caminhoArquivo = "Arquivos/ContaPrincipal/Arquivo.txt")
     {
@@ -45,7 +45,7 @@ class Program
                 };
 
                 contaAgua.CalcularConta();
-                /* Console.WriteLine(contaAgua); */
+                Console.WriteLine(contaAgua);
 
                 ContaEnergia contaEnergia = new ContaEnergia
                 {
@@ -106,14 +106,15 @@ class Program
         } 
     }
 
-    public static string escreveConsumidores(string nome)
+    public static string escreveConsumidores(string nome, string tipo)
     {
         try
         {
             int proximoID = ObterProximoID();
+            Console.WriteLine(proximoID);
 
             // Escrever no arquivo usando o próximo ID
-            sw.WriteLine(proximoID + "," + nome);
+            sw.WriteLine(proximoID + "," + nome + "," + tipo);
 
             // Fechar o StreamWriter
             sw.Close();
@@ -134,14 +135,29 @@ class Program
 
     public static int ObterProximoID()
     {
-        // Lê todas as linhas do arquivo para determinar o maior ID atual
-        int maiorID = File.ReadAllLines("Tabelas/Consumidores.txt")
-                        .Select(line => int.Parse(line.Split(',')[0]))
-                        .DefaultIfEmpty(0)
-                        .Max();
+        try
+        {
+            string[] linhas = File.ReadAllLines("Tabelas/Consumidores.txt");
 
-        // Incrementa o maior ID para obter o próximo ID
-        return maiorID + 1;
+            if (linhas.Length == 0)
+            {
+                // Se o arquivo estiver vazio, retorna 1 como o próximo ID
+                return 1;
+            }
+
+            // Se o arquivo não estiver vazio, continua com a lógica original
+            int maiorID = linhas
+                            .Select(line => int.Parse(line.Split(',')[0]))
+                            .DefaultIfEmpty(0)
+                            .Max();
+
+            return maiorID + 1;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Erro ao obter próximo ID: " + ex.Message);
+            return -1; // Retorna um valor que indica um erro (-1, por exemplo)
+        }
     }
 
     public static bool VerificarExistenciaID(int id)
@@ -160,7 +176,7 @@ class Program
                 {
                     if (consumidorID == id)
                     {
-                        // ID encontrado
+                        UsuarioLogado = id;
                         return true;
                     }
                 }
@@ -182,7 +198,6 @@ class Program
         Tables tables = new Tables();
 
         while(run){
-            Console.Clear();
             tables.DashboardTable();
             string opcao = Console.ReadLine();
             switch (opcao){
@@ -191,15 +206,17 @@ class Program
                     tables.RegisterTable();
                     Console.Write("Escreva seu nome: ");
                     string nome = Console.ReadLine();
-                    string consu = escreveConsumidores(nome);
+                    Console.Write("Qual seu tipo (Residencial ou Comercial): ");
+                    string tipoconsu = Console.ReadLine();
+                    string consu = escreveConsumidores(nome, tipoconsu);
                     if (consu == "true")
                     {
                         goto case "2";
                     } else 
                     {
                         Console.WriteLine(consu);
+                        break;
                     }
-                    break;
                 case "2":
                     tables.LoginTable();
                     Console.Write("Escreva seu ID: ");

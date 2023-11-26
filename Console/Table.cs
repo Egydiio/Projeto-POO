@@ -68,7 +68,8 @@ public class Tables
             switch (opcao)
             {
                 case "1":
-                    // Lógica para consultar o consumo de energia/água no último mês
+                    StreamWriter sw = File.AppendText("Tabelas/ContaAgua.txt");
+                    
                     break;
 
                 case "2":
@@ -114,7 +115,7 @@ public class Tables
             switch (opcao)
             {
                 case "1":
-                    // Lógica para consultar o consumo de energia/água no último mês
+                    
                     break;
 
                 case "2":

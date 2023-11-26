@@ -165,4 +165,14 @@ public class ContaAgua : Conta
     {
         return $"Consumidor: {Consumidor?.Id}, Tipo: {Consumidor?.Tipo}, Valor Total Água: {ValorTotal:C}";
     }
+
+    public double CalcularConsumoUltimoMes()
+    {
+        // Calcular o consumo no último mês
+        double consumo = LeituraMesAtual - LeituraMesAnterior;
+
+        // Retornar o consumo
+        return consumo;
+    }
+
 }
