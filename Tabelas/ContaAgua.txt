@@ -1,0 +1,1 @@
+1,janeiro,residencial,2345,5432,3087,0,1
