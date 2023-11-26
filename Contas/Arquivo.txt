@@ -1,2 +1,0 @@
-1;Residencial;100;150;Agua;50;80;Energia
-2;Comercial;200;250;Agua;75;120;Energia

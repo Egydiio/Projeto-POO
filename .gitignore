@@ -1,0 +1,4 @@
+# Ignorar arquivos Debugs
+bin/
+obj/
+*.cache
