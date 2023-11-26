@@ -1,0 +1,3 @@
+interface Conta{
+    void CalcularConta();
+}
