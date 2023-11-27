@@ -36,7 +36,7 @@ public class Tables
         fileTable += "|           Adicionar Arquivo            |\n";
         fileTable += "|----------------------------------------|\n";
         fileTable += "| 1 - Você deseja adicionar um arquivo ? |\n";
-        fileTable += "| 0 - Sair                               |\n";
+        fileTable += "| 0 - Não                                |\n";
         fileTable += "+----------------------------------------+";
         Console.WriteLine(fileTable);
     }
@@ -64,19 +64,30 @@ public class Tables
             Console.WriteLine(tablePrinc);
             this.Quest();
             opcao = Console.ReadLine();
+            ContaEnergia energia = new ContaEnergia();
+            ContaAgua agua = new ContaAgua();
+            double temp = 0;
 
             switch (opcao)
             {
                 case "1":
-                    // Lógica para consultar o consumo de energia/água no último mês
+                    Console.Clear();
+                    energia.calcularConsumo();
+                    agua.calcularConsumo();
                     break;
 
                 case "2":
-                    // Lógica para consultar o valor total da conta
+                    Console.Clear();
+                    temp += energia.calcularTotal();
+                    temp += agua.calcularTotal();
+                    if (temp != 0) 
+                    {
+                        Console.WriteLine("Total das contas: {0:F2}" , temp);
+                    }
                     break;
 
                 case "3":
-                    // Lógica para consultar o valor total da conta
+                    Console.WriteLine("O valor total da sua conta sem imposto é: {0:F2}" , GetTotalSemImposto.SomaTotalSemImposto);
                     break;
 
                 case "4":
@@ -84,7 +95,7 @@ public class Tables
                     break;
 
                 case "0":
-                    // Sair da consulta
+                    Console.WriteLine("Obrigado por usar nossa aplicação !!!");
                     break;
 
                 default:
@@ -114,7 +125,7 @@ public class Tables
             switch (opcao)
             {
                 case "1":
-                    // Lógica para consultar o consumo de energia/água no último mês
+                    
                     break;
 
                 case "2":

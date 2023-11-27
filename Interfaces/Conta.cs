@@ -1,3 +1,6 @@
-interface Conta{
-    void CalcularConta();
+interface Conta
+{
+    void CalcularConta(double consumo, string tipo);
+    void calcularConsumo();
+    double calcularTotal();
 }
