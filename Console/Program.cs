@@ -5,11 +5,17 @@ using System.IO;
 using System.Threading.Tasks.Dataflow;
 
 
+static public class GetTotalSemImposto
+{
+    public static double SomaTotalSemImposto;
+}
+
 class Program
 {
     public static int UsuarioLogado;
     public static StreamWriter sw = File.AppendText("Tabelas/Consumidores.txt");
-    static bool ProcessarContas(string caminhoArquivo = "Arquivos/ContaPrincipal/Arquivo.txt")
+    
+    static bool ProcessarContas(string caminhoArquivo)
     {
         try
         {
@@ -27,38 +33,27 @@ class Program
                 return false;
             }
 
-            foreach (string linha in linhas)
+            string caminhoArquivoSaidaContaAgua = "Tabelas/ContaAgua.txt";
+            string caminhoArquivoSaidaContaEnergia = "Tabelas/ContaEnergia.txt";
+
+            for (int i = 0; i < linhas.Length; i++)
             {
-                string[] dados = linha.Split(';');
+                string[] tipoConta = linhas[i].Split(',');
 
-                Consumidor consumidor = new Consumidor
+                Console.WriteLine(i);
+
+                if (tipoConta.Length > 0)
                 {
-                    Id = int.Parse(dados[0]),
-                    Tipo = (TipoConsumidor)Enum.Parse(typeof(TipoConsumidor), dados[1])
-                };
-
-                ContaAgua contaAgua = new ContaAgua
-                {
-                    Consumidor = consumidor,
-                    LeituraMesAnterior = double.Parse(dados[2]),
-                    LeituraMesAtual = double.Parse(dados[3])
-                };
-
-                contaAgua.CalcularConta();
-                Console.WriteLine(contaAgua);
-
-                ContaEnergia contaEnergia = new ContaEnergia
-                {
-                    Consumidor = consumidor,
-                    LeituraMesAnterior = double.Parse(dados[5]),
-                    LeituraMesAtual = double.Parse(dados[6])
-                };
-
-                contaEnergia.CalcularConta();
-                /* Console.WriteLine(contaEnergia); */
-
-                Console.WriteLine();
+                    if (tipoConta[0] == "ContaAgua")
+                    {
+                        GravarContaEmArquivo(linhas[i], caminhoArquivoSaidaContaAgua);
+                    } else
+                    {
+                        GravarContaEmArquivo(linhas[i], caminhoArquivoSaidaContaEnergia);
+                    }
+                }
             }
+
             return true; // Retorna true se o processamento for bem-sucedido
         }
         catch (IOException e)
@@ -70,6 +65,19 @@ class Program
             Console.WriteLine($"Erro: Sem permissão para acessar o arquivo '{caminhoArquivo}'.");
         }
         return false; // Retorna false em caso de erro
+    }
+
+    static void GravarContaEmArquivo(string linhaConta, string caminhoArquivoSaida)
+    {
+        string[] dados = linhaConta.Split(',');
+
+        if (dados.Length >= 10)
+        {
+            string novaLinha = $"{dados[1]},{dados[2]},{dados[3]},{dados[4]},{dados[5]},{dados[6]},{dados[7]},{dados[8]},{dados[9]}";
+
+            // Gravar em caminhoArquivoSaida
+            File.AppendAllText(caminhoArquivoSaida, novaLinha + Environment.NewLine);
+        }
     }
 
     static void Dashboard()
@@ -91,14 +99,11 @@ class Program
                 Console.WriteLine();
                 tables.AddFileTable();
                 nomeArq = Console.ReadLine();
-                caminhoCompleto = Path.Combine("Contas", nomeArq);
+                caminhoCompleto = Path.Combine("Arquivos", nomeArq);
             } while (ProcessarContas(caminhoCompleto) == false);
             
-            Console.WriteLine(caminhoCompleto);
-            if (ProcessarContas(caminhoCompleto))
-            {
-                tables.ConsultTable();
-            }
+            tables.ConsultTable();
+            
         }
         else
         {
@@ -111,9 +116,15 @@ class Program
         try
         {
             int proximoID = ObterProximoID();
-            Console.WriteLine(proximoID);
 
-            // Escrever no arquivo usando o próximo ID
+            // Validar o tipo do consumidor
+            if (proximoID == -1)
+            {
+                Console.WriteLine("Erro: Tipo de consumidor inválido. Use 'Residencial' ou 'Comercial'.");
+                return "false";
+            }
+
+            // Escrever no arquivo usando o próximo ID e o tipo do consumidor
             sw.WriteLine(proximoID + "," + nome + "," + tipo);
 
             // Fechar o StreamWriter
@@ -132,6 +143,7 @@ class Program
             return "Erro ao escrever no arquivo: " + ex.Message;
         }
     }
+
 
     public static int ObterProximoID()
     {

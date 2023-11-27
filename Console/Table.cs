@@ -68,8 +68,9 @@ public class Tables
             switch (opcao)
             {
                 case "1":
-                    StreamWriter sw = File.AppendText("Tabelas/ContaAgua.txt");
-                    
+                    ContaEnergia energia = new ContaEnergia();
+                    ContaAgua agua = new ContaAgua();
+                    energia.verConsumo();
                     break;
 
                 case "2":
@@ -77,7 +78,7 @@ public class Tables
                     break;
 
                 case "3":
-                    // Lógica para consultar o valor total da conta
+                    Console.WriteLine("O valor total da sua conta sem imposto é: " + GetTotalSemImposto.SomaTotalSemImposto);
                     break;
 
                 case "4":

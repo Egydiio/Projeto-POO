@@ -8,6 +8,9 @@ public class ContaEnergia : Conta
     public double ContribuicaoIluminacao { get; set; }
     public double Imposto { get; set; }
     public double ValorTotal { get; set; }
+    public string Mes { get; set; }
+    public string TipoImovel { get; set; }
+    public double ValorSemImposto { get; set; }
 
     public void CalcularConta()
     {
@@ -32,6 +35,8 @@ public class ContaEnergia : Conta
             Imposto = ValorTotal * 0.2195;
 
         ValorTotal += Imposto;
+
+        GetTotalSemImposto.SomaTotalSemImposto += ValorTotal - Imposto;
     }
 
     public override string ToString()
