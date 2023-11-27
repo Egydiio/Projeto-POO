@@ -14,7 +14,6 @@ public class ContaAgua : Conta
     public double TarifaAguaTemp { get; set; }
     public double TarifaEsgotoTemp { get; set; }
     public string TipoImovel { get; set; }
-    public string Mes { get; set; }
     public double ValorSemImposto { get; set; }
 
 
@@ -176,41 +175,73 @@ public class ContaAgua : Conta
     }
 
     public void calcularConsumo(){
-        string[] linhas = File.ReadAllLines("Tabelas/ContaAgua.txt");
-        int id = Program.UsuarioLogado;
-        int qualLinha = 0;
-        for(int i = 0; i < linhas.Length; i++){
-            string[] temp = linhas[i].Split(',');
-            if(int.Parse(temp[5]) == id){
-                qualLinha = i;
+        try
+        {
+            string[] linhas = File.ReadAllLines("Tabelas/ContaAgua.txt");
+
+            if (linhas.Length == 0)
+            {
+                Console.WriteLine($"Erro: O arquivo está vazio.");
+            } else
+            {
+                int id = Program.UsuarioLogado;
+                int qualLinha = 0;
+                for(int i = 0; i < linhas.Length; i++){
+                    string[] temp = linhas[i].Split(',');
+                    if(int.Parse(temp[5]) == id){
+                        qualLinha = i;
+                    }
+                }
+                string[] splitada = linhas[qualLinha].Split(",");
+                double anterior = double.Parse(splitada[3]);
+                double atual = double.Parse(splitada[4]);
+                double consumo = atual - anterior;
+                Console.WriteLine("Consumo Agua: " + consumo);
             }
+        } catch (IOException e)
+        {
+            Console.WriteLine($"Ocorreu um erro ao ler o arquivo: {e.Message}");
         }
-        string[] splitada = linhas[qualLinha].Split(",");
-        double anterior = double.Parse(splitada[3]);
-        double atual = double.Parse(splitada[4]);
-        double consumo = atual - anterior;
-        Console.WriteLine("Consumo Agua: " + consumo);
+        catch (UnauthorizedAccessException)
+        {
+            Console.WriteLine($"Erro: Sem permissão para acessar o arquivo.");
+        }
     }
 
     public double calcularTotal(){
-        string[] linhas = File.ReadAllLines("Tabelas/ContaAgua.txt");
-        int id = Program.UsuarioLogado;
-        int qualLinha = 0;
-        for(int i = 0; i < linhas.Length; i++){
-            string[] temp = linhas[i].Split(',');
-            if(int.Parse(temp[5]) == id){
-                qualLinha = i;
+        try
+        {
+            string[] linhas = File.ReadAllLines("Tabelas/ContaAgua.txt");
+
+            if (linhas.Length == 0)
+            {
+                Console.WriteLine($"Erro: O arquivo está vazio.");
+                return 0;
+            } else
+            {
+                int id = Program.UsuarioLogado;
+                int qualLinha = 0;
+                for(int i = 0; i < linhas.Length; i++){
+                    string[] temp = linhas[i].Split(',');
+                    if(int.Parse(temp[5]) == id){
+                        qualLinha = i;
+                    }
+                }
+                string[] splitada = linhas[qualLinha].Split(",");
+                double anterior = double.Parse(splitada[3]);
+                double atual = double.Parse(splitada[4]);
+                string tipo = splitada[2];
+                double consumo = atual - anterior;
+
+                CalcularConta(consumo, tipo);
+
+                return ValorTotal;
             }
+        } catch (Exception ex)
+        {
+            Console.WriteLine($"Ocorreu um erro ao ler o arquivo: {ex.Message}");
+            return 0;
         }
-        string[] splitada = linhas[qualLinha].Split(",");
-        double anterior = double.Parse(splitada[3]);
-        double atual = double.Parse(splitada[4]);
-        string tipo = splitada[2];
-        double consumo = atual - anterior;
-
-        CalcularConta(consumo, tipo);
-
-        return ValorTotal;
     }
 
 }

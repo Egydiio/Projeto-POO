@@ -80,8 +80,10 @@ public class Tables
                     Console.Clear();
                     temp += energia.calcularTotal();
                     temp += agua.calcularTotal();
-                    Console.WriteLine("Total das contas: {0:F2}" , temp);
-
+                    if (temp != 0) 
+                    {
+                        Console.WriteLine("Total das contas: {0:F2}" , temp);
+                    }
                     break;
 
                 case "3":
@@ -93,7 +95,7 @@ public class Tables
                     break;
 
                 case "0":
-                    // Sair da consulta
+                    Console.WriteLine("Obrigado por usar nossa aplicação !!!");
                     break;
 
                 default:

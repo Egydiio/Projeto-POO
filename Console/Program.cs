@@ -252,10 +252,10 @@ class Program
                     }
                     break;
                 case "0":
-                    Console.Clear();
                     Console.WriteLine("Obrigado por usar nossa aplicação !!!");
                     run = false;
                     sw.Close();
+                    Environment.Exit(1);
                     break;
                 default:
                     Console.WriteLine("Opção inválida.");

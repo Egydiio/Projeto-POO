@@ -1,3 +1,2 @@
 1,abril,residencial,345,765,1
-2,abril,residencial,50,87,2
-3,abril,residencial,10,20,1
+1,abril,residencial,50,87,2

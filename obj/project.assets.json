@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\MARCE\\.nuget\\packages\\": {}
+    "C:\\Users\\Egydiio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MARCE\\Desktop\\PastaPOO\\Projeto-POO\\Projeto-POO.csproj",
+      "projectUniqueName": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj",
       "projectName": "Projeto-POO",
-      "projectPath": "C:\\Users\\MARCE\\Desktop\\PastaPOO\\Projeto-POO\\Projeto-POO.csproj",
-      "packagesPath": "C:\\Users\\MARCE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MARCE\\Desktop\\PastaPOO\\Projeto-POO\\obj\\",
+      "projectPath": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\Projeto-POO.csproj",
+      "packagesPath": "C:\\Users\\Egydiio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Egydiio\\Documents\\POO\\Trabalho Final\\Projeto-POO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MARCE\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Egydiio\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }
