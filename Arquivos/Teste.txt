@@ -1,2 +1,2 @@
-ContaAgua,1,abril,residencial,345,765,420,13,25,0,1
-ContaEnergia,1,fevereiro,comercial,345,765,420,13,25,0,1
+ContaAgua,1,abril,residencial,345,765
+ContaEnergia,1,fevereiro,comercial,345,765

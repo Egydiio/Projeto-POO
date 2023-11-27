@@ -19,13 +19,12 @@ public class ContaAgua : Conta
 
 
 
-    public void CalcularConta()
+    public void CalcularConta(double Consumo, string tipo)
     {
-        Consumo = LeituraMesAtual - LeituraMesAnterior;
         count = 0;
 
         // Lógica de cálculo da tarifa escalonada para água
-        if (Consumidor?.Tipo == TipoConsumidor.Residencial)
+        if (tipo == "residencial")
         {
             if (Consumo >= 6)
             {
@@ -99,7 +98,7 @@ public class ContaAgua : Conta
                 TarifaEsgoto = 5.05; // Tarifa fixa para a faixa 0-6 m³ de esgoto
             }
         }
-        else if (Consumidor?.Tipo == TipoConsumidor.Comercial)
+        else if (tipo == "comercial")
         {
             if (Consumo >= 6)
             {
@@ -165,8 +164,10 @@ public class ContaAgua : Conta
         Cofins = ValorTotal * 0.03;
 
         ValorTotal += Cofins;
-
         GetTotalSemImposto.SomaTotalSemImposto += ValorTotal - Cofins;
+
+        Console.WriteLine("Valor Total Agua: {0:F2}" , ValorTotal);
+
     }
 
     public override string ToString()
@@ -174,13 +175,42 @@ public class ContaAgua : Conta
         return $"Consumidor: {Consumidor?.Id}, Tipo: {Consumidor?.Tipo}, Valor Total Água: {ValorTotal:C}";
     }
 
-    public double CalcularConsumoUltimoMes()
-    {
-        // Calcular o consumo no último mês
-        double consumo = LeituraMesAtual - LeituraMesAnterior;
+    public void calcularConsumo(){
+        string[] linhas = File.ReadAllLines("Tabelas/ContaAgua.txt");
+        int id = Program.UsuarioLogado;
+        int qualLinha = 0;
+        for(int i = 0; i < linhas.Length; i++){
+            string[] temp = linhas[i].Split(',');
+            if(int.Parse(temp[5]) == id){
+                qualLinha = i;
+            }
+        }
+        string[] splitada = linhas[qualLinha].Split(",");
+        double anterior = double.Parse(splitada[3]);
+        double atual = double.Parse(splitada[4]);
+        double consumo = atual - anterior;
+        Console.WriteLine("Consumo Agua: " + consumo);
+    }
 
-        // Retornar o consumo
-        return consumo;
+    public double calcularTotal(){
+        string[] linhas = File.ReadAllLines("Tabelas/ContaAgua.txt");
+        int id = Program.UsuarioLogado;
+        int qualLinha = 0;
+        for(int i = 0; i < linhas.Length; i++){
+            string[] temp = linhas[i].Split(',');
+            if(int.Parse(temp[5]) == id){
+                qualLinha = i;
+            }
+        }
+        string[] splitada = linhas[qualLinha].Split(",");
+        double anterior = double.Parse(splitada[3]);
+        double atual = double.Parse(splitada[4]);
+        string tipo = splitada[2];
+        double consumo = atual - anterior;
+
+        CalcularConta(consumo, tipo);
+
+        return ValorTotal;
     }
 
 }

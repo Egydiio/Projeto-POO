@@ -1,1 +1,3 @@
-1,fevereiro,comercial,345,765,13,25,0,1
+1,fevereiro,comercial,345,765,1
+1,fevereiro,comercial,50,87,2
+3,abril,residencial,10,20,1

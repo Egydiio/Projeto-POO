@@ -40,7 +40,6 @@ class Program
             {
                 string[] tipoConta = linhas[i].Split(',');
 
-                Console.WriteLine(i);
 
                 if (tipoConta.Length > 0)
                 {
@@ -71,9 +70,9 @@ class Program
     {
         string[] dados = linhaConta.Split(',');
 
-        if (dados.Length >= 10)
+        if (dados.Length >= 6)
         {
-            string novaLinha = $"{dados[1]},{dados[2]},{dados[3]},{dados[4]},{dados[5]},{dados[6]},{dados[7]},{dados[8]},{dados[9]}";
+            string novaLinha = $"{dados[1]},{dados[2]},{dados[3]},{dados[4]},{dados[5]},{UsuarioLogado}";
 
             // Gravar em caminhoArquivoSaida
             File.AppendAllText(caminhoArquivoSaida, novaLinha + Environment.NewLine);
@@ -111,7 +110,7 @@ class Program
         } 
     }
 
-    public static string escreveConsumidores(string nome, string tipo)
+    public static string escreveConsumidores(string nome)
     {
         try
         {
@@ -125,7 +124,7 @@ class Program
             }
 
             // Escrever no arquivo usando o próximo ID e o tipo do consumidor
-            sw.WriteLine(proximoID + "," + nome + "," + tipo);
+            sw.WriteLine(proximoID + "," + nome);
 
             // Fechar o StreamWriter
             sw.Close();
@@ -210,6 +209,7 @@ class Program
         Tables tables = new Tables();
 
         while(run){
+            Console.Clear();
             tables.DashboardTable();
             string opcao = Console.ReadLine();
             switch (opcao){
@@ -218,9 +218,7 @@ class Program
                     tables.RegisterTable();
                     Console.Write("Escreva seu nome: ");
                     string nome = Console.ReadLine();
-                    Console.Write("Qual seu tipo (Residencial ou Comercial): ");
-                    string tipoconsu = Console.ReadLine();
-                    string consu = escreveConsumidores(nome, tipoconsu);
+                    string consu = escreveConsumidores(nome);
                     if (consu == "true")
                     {
                         goto case "2";
